@@ -1,0 +1,14 @@
+<div class='container h-100 p-0'>
+    <div class="d-flex align-items-center justify-content-center h-100" >
+        <div class='barcode-scanner-wrapper'>
+            <p class='text-center mb-0 font-size-18'>Welcome!</p>
+            <p class='text-center font-size-18'>Kindly proceed by scanning a barcode.</p>
+            <br/><br/>
+            <p class='text-center font-weight-bold font-size-18'>Barcode Scanner</p>
+        
+            <zxing-scanner *ngIf="showBarCode" [formats]="allowedFormats" class='text-center'
+            (camerasNotFound)="notFound()" (scanSuccess)="getResult($event)"></zxing-scanner>
+            <p class='error-msg' *ngIf="errorMsg != ''">{{ errorMsg }}</p>
+        </div>
+    </div>
+</div>

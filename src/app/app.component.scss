@@ -1,0 +1,41 @@
+@import '../color';
+
+.menu-container {
+    width: 100%;
+    background-color: $lightgrey!important;
+}
+  
+.menu-sidenav {
+    padding: 20px;
+}
+  
+.menu-sidenav-content {
+    height: 100%;
+}
+  
+.menu-spacer {
+    flex: 1 1 auto;
+}
+  
+.centered {
+    position: absolute;
+    margin-top:15px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+  .menu-item {
+    padding: 15px;
+    border-bottom: 1px solid grey;
+    width: 200px;
+}
+
+.menu-text {
+    margin-left:5px;
+    line-height: 5px; 
+    vertical-align: text-top;
+}
+
+.menu-img {
+    width:119px;
+}

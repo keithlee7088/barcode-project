@@ -1,0 +1,25 @@
+<mat-toolbar *ngIf="!isLoginPage">
+  <button mat-icon-button (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <img src='assets/images/company-logo.png' class='centered menu-img' />
+  <span class="menu-spacer"></span>
+  <button mat-icon-button (click)="router.navigate(['/login']);">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-drawer-container class="menu-container" [ngStyle]="{ 'height': isLoginPage ? '100%' : 'calc(100% - 64px)' }">
+  <mat-drawer #drawer class="menu-sidenav p-0" mode="over">
+    <div class='col-12 menu-item' routerLink='/barcode' (click)="drawer.close()">
+      <mat-icon>lock</mat-icon><span class='menu-text'>Scan QR Code</span>
+    </div>
+    <div class='col-12 menu-item' routerLink='/login' (click)="drawer.close()">
+      <mat-icon>exit_to_app</mat-icon><span class='menu-text'>Sign Out</span>
+    </div>
+  </mat-drawer>
+
+  <div class="menu-sidenav-content h-100">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container> 
